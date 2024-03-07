@@ -15,6 +15,20 @@ using namespace std;
 
 //----------------------------------------------------------------------------------------
 // Define the command line flags
+DEFINE_bool(color, true, "Enable or disable color in the output");
+// Parse the flags
+gflags::ParseCommandLineFlags(&argc, &argv, true);
+
+// Use the value of the color flag
+if (FLAGS_color) {
+    
+    cout << "Color is enabled" << endl;//// Enable color in the output & Add your color-related code here
+} else {
+    
+    cout << "Color is disabled" << endl;// Disable color in the output & Add your non-color-related code here
+}
+
+
 //----------------------------------------------------------------------------------------
 
 DEFINE_string(config, "./config.json", "location of the config.json settings file");
